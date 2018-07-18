@@ -132,9 +132,41 @@
                 <option value="4">4</option>
                 <option value="5">5 (Strong agree) </option>
             </select>
-
-            <button type="submit" class="btn btn-primary submit">Submit</button>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary submit" data-toggle="modal" data-target="#matchModal">Submit</button>
         </form>
+    </div>
+
+    <div class="container">
+        <hr>
+        <p>
+            <a href="./home.html">Home Link</a> |
+            <a href="/api/friends">Friend Match List</a> |
+            <a href="https://github.com/chenfanlimc/friendFinder">Github Repo Link</a>
+        </p>
+    </div>
+
+    <div class="modal" id="matchModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Friend Match Result</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    ...
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     </div>
 
@@ -165,6 +197,10 @@
         $.post("/api/friends", results, function (data) {
 
             console.log("Survey submitted.");
+            console.log(data);
+            var message = "<p>You're matched with " + data.name + "! Congratulations. </p>"
+            var picture = "\n<img src= " + data.photo + " style='width:100%;'>"
+            $(".modal-body")[0].innerHTML = message + picture;
 
             $("#questionOne").val("");
             $("#questionTwo").val("");
