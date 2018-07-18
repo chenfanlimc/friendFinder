@@ -18,6 +18,7 @@ module.exports = function (app) {
             indexScoreTracker.push(individualScore);
         }
         res.json(friends[findMatch(indexScoreTracker)]);
+        //^why does the above code not work??????
         friends.push(surveyResults);
     })
 
