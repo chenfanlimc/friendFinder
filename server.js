@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-require("./routing/apiRoutes")(app);
-require("./routing/htmtRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 app.listen(PORT, function() {
     console.log("App listening on http://localhost:" + PORT);

@@ -145,11 +145,11 @@
 <script type="text/javascript">
 
     $(".submit").on("click", function (event) {
-        even.preventDefault();
+        event.preventDefault();
         var results = {
             name: $("#user-name").val().trim(),
             image: $("#image-link").val().trim(),
-            score: [
+            scores: [
                 $("#questionOne").val().trim(),
                 $("#questionTwo").val().trim(),
                 $("#questionThree").val().trim(),
@@ -161,9 +161,7 @@
                 $("#questionNine").val().trim(),
                 $("#questionTen").val().trim()
             ]
-
         }
-        console.log(results);
         $.post("/api/friends", results, function (data) {
 
             console.log("Survey submitted.");
