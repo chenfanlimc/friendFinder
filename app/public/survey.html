@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Survey Page</title>
+    <title>Survey Questions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -16,14 +16,169 @@
 </head>
 
 <body>
+
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                
+        <h1>Survey Questions</h1>
+        <br>
+
+        <form role="form">
+
+            <div class="form-group">
+                <label for="user-name">Name(Required)</label>
+                <input type="text" class="form-control" id="user-name">
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="image-link">Link to Photo Image (Required)</label>
+                <input type="text" class="form-control" id="image-link">
+            </div>
+
+            <h4>You love to go on long hikes with friends.</h4>
+            <select class="custom-select" id="questionOne">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You like a quiet casual evening chatting with a few core friends.</h4>
+            <select class="custom-select" id="questionTwo">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You love to go to large parties to meet new people.</h4>
+            <select class="custom-select" id="questionThree">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You like playing board games and making horrible pun jokes with friends.</h4>
+            <select class="custom-select" id="questionFour">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You enjoy walking around neighborhood at night with your friends, talking about your innermost thoughts.</h4>
+            <select class="custom-select" id="questionFive">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You love to drink with friends, and have a rowdy fun time while buzzed.</h4>
+            <select class="custom-select" id="questionSix">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You love sharing the experience of doing new activities with friends.</h4>
+            <select class="custom-select" id="questionSeven">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>Your ideal night is LAN parties, couch-potato gaming, VR gaming, and Magic the Gathering with your crew.</h4>
+            <select class="custom-select" id="questionEight">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You can only take hanging out so often, and need time alone to recharge.</h4>
+            <select class="custom-select" id="questionNine">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <h4>You are always up for a good hangout, whatever that means in your book.</h4>
+            <select class="custom-select" id="questionTen">
+                <option selected>Select an option</option>
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strong agree) </option>
+            </select>
+
+            <button type="submit" class="btn btn-primary submit">Submit</button>
+        </form>
+
     </div>
 
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+    $(".submit").on("click", function (event) {
+        even.preventDefault();
+        var results = {
+            name: $("#user-name").val().trim(),
+            image: $("#image-link").val().trim(),
+            score: [
+                $("#questionOne").val().trim(),
+                $("#questionTwo").val().trim(),
+                $("#questionThree").val().trim(),
+                $("#questionFour").val().trim(),
+                $("#questionFive").val().trim(),
+                $("#questionSix").val().trim(),
+                $("#questionSeven").val().trim(),
+                $("#questionEight").val().trim(),
+                $("#questionNine").val().trim(),
+                $("#questionTen").val().trim()
+            ]
+
+        }
+        console.log(results);
+        $.post("/api/friends", results, function (data) {
+
+            console.log("Survey submitted.");
+
+            $("#questionOne").val("");
+            $("#questionTwo").val("");
+            $("#questionThree").val("");
+            $("#questionFour").val("");
+            $("#questionFive").val("");
+            $("#questionSix").val("");
+            $("#questionSeven").val("");
+            $("#questionEight").val("");
+            $("#questionNine").val("");
+            $("#questionTen").val("");
+        })
+    })
+
+</script>
